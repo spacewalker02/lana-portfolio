@@ -1,0 +1,28 @@
+.footer {
+    border-top: 1px solid var(--border);
+    padding-block: 28px;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-3);
+  }
+  
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .right {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  
+    a {
+      transition: color var(--t-fast);
+    }
+    a:hover {
+      color: var(--text);
+    }
+  }
