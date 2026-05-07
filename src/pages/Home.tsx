@@ -1,10 +1,9 @@
-import { Container } from '@/components/layout/Container/Container';
+import { Hero } from "@/components/home/Hero/Hero";
 
 export default function Home() {
   return (
-    <Container>
-      <h1>Svetlana Saikova - portfolio</h1>
-      <p>Basic text.</p>
-    </Container>
+    <>
+        <Hero />
+    </>
   );
 }

@@ -1,0 +1,41 @@
+.hero {
+    padding-top: 88px;
+    padding-bottom: 120px;
+  }
+  
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .title {
+    font-size: var(--text-hero);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+    max-width: 16ch;
+  
+    em {
+      font-style: normal;
+      color: var(--accent);
+    }
+  }
+  
+  .sub {
+    margin-top: 28px;
+    font-size: var(--text-lg);
+    color: var(--text-2);
+    max-width: 56ch;
+    line-height: 1.55;
+  }
+  
+  .actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
