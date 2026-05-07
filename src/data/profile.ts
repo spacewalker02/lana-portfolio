@@ -11,8 +11,8 @@ export const profile = {
       label: 'available · may 2026',
     },
   
-    location: 'Based in Asia · collaborating across US, EU & Asia time zones',
-    experience: '3+ yrs in regulated fintech',
+    location: 'Asia · working flexibly across US, EU, and Asia time zones',
+    experience: '3+ yrs in fintech',
   
     heroSub: [
         "I'm Svetlana, a Product Designer with 3+ years in regulated fintech.",
@@ -21,20 +21,19 @@ export const profile = {
       ],
   
     bio: [
-      `I spent the last three years inside a US fintech, designing
-       regulated products — onboarding, KYC, lending. Most of that work
-       lives behind NDAs and dashboards few people see. I learned to make
-       calm, trustworthy interfaces under constraints other designers
-       never touch.`,
-  
-      `Somewhere along the way I got tired of the handoff gap. So I learned
-       React and TypeScript well enough to ship a feature myself - and now
-       I prototype in code, build the marketing pages I design, and have
-       real conversations with engineers about trade-offs.`,
-  
-      `I'm looking for a remote middle Product Designer role at a fintech,
-       SaaS, or developer-tools company that values designers who think in
-       systems and ship in code.`,
+        `I spent the last three years at Access Softek, an American fintech
+        building white-label digital banking platforms for US credit unions.
+        I designed multi-tenant features that ship to multiple institutions
+        simultaneously, each with its own brand, benefits, and configuration.`,
+   
+       `Somewhere along the way I got tired of the handoff gap. So I learned
+        React and TypeScript well enough to prototype in code, validate UI
+        implementation directly in DevTools, and have real conversations
+        with engineers about trade-offs.`,
+   
+       `I'm looking for a remote middle Product Designer role at a fintech,
+        SaaS, or developer-tools company that values designers who think in
+        systems and ship in code. Open to flexible time zones.`,
     ],
   
     contact: {

@@ -1,0 +1,62 @@
+.about {
+    background: var(--surface);
+    padding-block: 96px;
+  }
+  
+  .head {
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    max-width: 32ch;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 48px;
+    align-items: start;
+  }
+  
+  @media (max-width: 760px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+  
+  .photo {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #d6e0e3 0%, #b3c4c9 100%);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.6) 0, rgba(255, 255, 255, 0) 28%),
+        radial-gradient(circle at 50% 80%, rgba(0, 0, 0, 0.05) 0, rgba(0, 0, 0, 0) 60%);
+    }
+  }
+  
+  .bio {
+    p {
+      font-size: var(--text-lg);
+      line-height: var(--leading-relaxed);
+      color: var(--text);
+      margin-bottom: 18px;
+      max-width: 56ch;
+    }
+  
+    p:last-child {
+      margin-bottom: 0;
+      color: var(--text-2);
+    }
+  }
