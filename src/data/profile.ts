@@ -14,10 +14,11 @@ export const profile = {
     location: 'Based in Asia · collaborating across US, EU & Asia time zones',
     experience: '3+ yrs in regulated fintech',
   
-    heroSub:
-      "I'm Svetlana, a Product Designer with 3+ years in regulated fintech. " +
-      'I work end-to-end: research, UX, UI, design systems, and write the ' +
-      'React that ships them. Based in Asia · collaborating across US, EU & Asia time zones.',
+    heroSub: [
+        "I'm Svetlana, a Product Designer with 3+ years in regulated fintech.",
+        "I work end-to-end: research, UX, UI, design systems, and write the React that ships them.",
+        "Based in Asia · collaborating across US, EU & Asia time zones.",
+      ],
   
     bio: [
       `I spent the last three years inside a US fintech, designing

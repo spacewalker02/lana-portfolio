@@ -37,7 +37,6 @@
   
   .statusDotOk {
     background: var(--success);
-    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
     animation: pulse-dot 2s ease-in-out infinite;
   }
   
@@ -84,4 +83,9 @@
   
   .btnGhost:hover {
     background: var(--surface);
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18); }
+    50%      { box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.08); }
   }

@@ -17,7 +17,11 @@ export function Hero() {
           <em>shipping them in code</em>.
         </h1>
 
-        <p className={styles.sub}>{profile.heroSub}</p>
+        <div className={styles.sub}>
+            {profile.heroSub.map((line, i) => (
+                <p key={i}>{line}</p>
+            ))}
+        </div>
 
         <div className={styles.actions}>
           <ButtonLink href="#work">

@@ -1,12 +1,6 @@
 @use 'tokens';
 @use 'reset';
 
-// global keyframes
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18); }
-  50%      { box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.08); }
-}
-
 // reduce motion — accessibility
 @media (prefers-reduced-motion: reduce) {
   *,
