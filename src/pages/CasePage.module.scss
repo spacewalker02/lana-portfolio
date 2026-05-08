@@ -1,0 +1,30 @@
+.h2 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 56px 0 18px;
+    line-height: var(--leading-snug);
+  }
+  
+  .h2Mono {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-3);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  
+  .reflection {
+    p {
+      font-size: var(--text-md);
+      line-height: var(--leading-relaxed);
+      color: var(--text);
+      margin-bottom: 18px;
+      max-width: 62ch;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }

@@ -15,7 +15,7 @@ export const profile = {
     experience: '3+ yrs in fintech',
   
     heroSub: [
-        "I'm Svetlana, a Product Designer with 3+ years in regulated fintech.",
+        "I'm Svetlana, a Product Designer with 3+ years in fintech.",
         "I work end-to-end: research, UX, UI, design systems, and write the React that ships them.",
         "Based in Asia · collaborating across US, EU & Asia time zones.",
       ],
@@ -39,7 +39,7 @@ export const profile = {
     contact: {
       email: 'svetlanasaykova@gmail.com',
       replyTime: 'I reply within 24 hours.',
-      bestTime: 'Mon–Fri, 9–18 CET',
+      bestTime: 'flexible · Mon–Fri',
     },
   
     links: {

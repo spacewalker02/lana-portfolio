@@ -1,9 +1,10 @@
-import { Routes, Route } from "react-router-dom";
-import { Header } from "@/components/layout/Header/Header";
-import { Footer } from "@/components/layout/Footer/Footer";
-import { ScrollToTop } from "@/hooks/useScrollToTop";
-import Home from "@/pages/Home";
-import NotFound from "@/pages/NotFound";
+import { Routes, Route } from 'react-router-dom';
+import { Header } from '@/components/layout/Header/Header';
+import { Footer } from '@/components/layout/Footer/Footer';
+import { ScrollToTop } from '@/hooks/useScrollToTop';
+import Home from '@/pages/Home';
+import CasePage from '@/pages/CasePage';
+import NotFound from '@/pages/NotFound';
 
 function App() {
   return (
@@ -13,12 +14,13 @@ function App() {
       <main id="top">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/case/:slug" element={<CasePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

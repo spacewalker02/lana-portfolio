@@ -1,0 +1,70 @@
+.prose {
+    // styling ниже на дочерних элементах
+  }
+  
+  .h2 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 56px 0 18px;
+    line-height: var(--leading-snug);
+  }
+  
+  .h2Mono {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-3);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  
+  .h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin: 32px 0 12px;
+    line-height: var(--leading-snug);
+  }
+  
+  .p {
+    font-size: var(--text-md);
+    line-height: var(--leading-relaxed);
+    color: var(--text);
+    margin-bottom: 18px;
+    max-width: 62ch;
+  }
+  
+  .ul {
+    padding-left: 20px;
+    margin-bottom: 18px;
+    list-style: disc;
+  
+    li {
+      font-size: var(--text-md);
+      line-height: var(--leading-relaxed);
+      color: var(--text);
+      margin-bottom: 8px;
+      max-width: 60ch;
+    }
+  }
+  
+  .quote {
+    border-left: 3px solid var(--accent);
+    padding: 8px 0 8px 24px;
+    margin: 32px 0;
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: var(--text-2);
+    font-style: italic;
+    max-width: 60ch;
+  
+    cite {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-3);
+      font-style: normal;
+    }
+  }
