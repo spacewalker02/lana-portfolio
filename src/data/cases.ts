@@ -30,11 +30,11 @@ export const cases: Case[] = [
 
     tldr: {
       problem:
-        'Tiered loyalty system needed to ship simultaneously to two credit unions with different brands, tier counts, and benefits, on web and mobile.',
+        'Tiered loyalty system needed to ship simultaneously across web and mobile for two credit unions with different brands, tier counts, tier names, and benefit structures, without duplicating the experience.',
       solution:
-        'Treated tier status as a system (icon + color + state), built a parameterized component library, made platform-specific layout decisions for desktop comparison vs. mobile sequence.',
+        'Shared configurable framework: reusable tier cards, status states, benefit structures, and account-level logic that could adapt to each credit union\'s branding, tier model, icons, and reward rules.',
       impact:
-        'Shipped on schedule to Texas Trust and Evolve. Both adopted it as a core engagement product. Component system holds up through ongoing maintenance.',
+        'Shipped to two credit unions in the same release. One configurable component framework supported both implementations, and the feature became a core engagement tool for both institutions.',
     },
 
     // I will with real Loom URL when recorded; placeholder shows pretty empty state
@@ -42,125 +42,111 @@ export const cases: Case[] = [
 
     body: [
       // ===== 01 — Context =====
-      { type: 'h2', mono: '// 01 — context', text: 'The product' },
+      { type: 'h2', mono: '// 01 context', text: 'The product' },
       {
         type: 'p',
         text:
-          "Access Softek serves credit unions that need a modern digital banking platform but don't have the engineering capacity to build one in-house. Each credit union deploys the platform under its own brand, with feature and visual customization per institution.",
+          "Access Softek provides white-label digital banking platforms for credit unions. Each institution deploys the product under its own brand, with configurable features, visuals, and content.",
       },
       {
         type: 'p',
         text:
-          'True Blue Loyalty Rewards is a tiered membership program — Bronze, Silver, Gold, Blue Diamond — that rewards members with concrete benefits (loan skip payments, APY bumps on CDs, fee waivers, theater raffle entries) for the breadth of products they hold with their credit union. The strategic intent: encourage members to consolidate more financial products with their credit union, increasing both retention and cross-sell.',
+          'True Blue Loyalty Rewards is a tiered membership program - Bronze, Silver, Gold, Blue Diamond - that rewards members for holding more products with their credit union. Benefits included loan skip payments, APY bumps on CDs, fee waivers, and raffle entries. The business goal was to increase retention and cross-sell by encouraging members to consolidate more financial products with their credit union.',
       },
       {
         type: 'p',
         text:
-          'I worked alongside a Product Manager who owned the program strategy and benefit definition. I owned the design execution: how the system would look, feel, and behave on web, iOS, and Android — in a way that could be deployed across multiple credit unions with brand and configuration variation.',
+          'I worked with a Product Manager who owned the program strategy and benefit definition. My role was to translate the program into a web, iOS, and Android experience that could support different credit union brands, tier configurations, and benefit structures without redesigning the flow from scratch.',
       },
 
       // ===== 02 — Problem =====
-      { type: 'h2', mono: '// 02 — the problem', text: 'Where the design needed to land' },
+      { type: 'h2', mono: '// 02 the problem', text: 'Where the design needed to land' },
       {
         type: 'p',
         text:
-          'The PM defined what to ship; my job was figuring out how it should work as a designed system. The core design challenges were:',
+          'The PM defined what to ship; my role was to translate the loyalty strategy into a scalable design system across web and mobile. The core design challenges were:',
       },
       {
         type: 'ul',
         items: [
-          'Make tier progression feel motivating, not gatekeeping. The system needed to celebrate members\' current status while making the path to the next tier visible and achievable.',
-          'Keep dense benefit information scannable. Each tier carried multiple concrete benefits with their own actions and fine print. Users needed to understand their status fast and compare tiers without getting buried in text.',
-          'Survive multi-tenant deployment. The same feature would launch at two credit unions with overlapping but not identical benefit lists, brand colors, icon sets, and tier counts. Visual patterns and components had to be composable enough to handle variation without rebuilding.',
-          'Work on web and mobile from day one — not as an afterthought. Members use both surfaces, and each platform supports a different mental model for engaging with rewards.',
+          'Make tier progression feel motivating, not gatekeeping.   Celebrate the member\’s current status while making the path to the next tier clear and achievable.',
+          'Keep dense benefit information scannable.   Help members understand their status, compare tiers, and access benefit details without getting buried in text.',
+          'Support multi-tenant deployment. The same feature needed to work for credit unions with different tier counts, tier names, brand styles, icons, and benefit structures.',
+          'Work across web and mobile from day one. The experience had to adapt to different screen sizes, content density, and navigation patterns without becoming a separate product on each platform.',
         ],
       },
 
       // ===== 03 — Constraints =====
-      { type: 'h2', mono: '// 03 — constraints', text: 'What I had to work with' },
+      { type: 'h2', mono: '// 03 constraints', text: 'What I had to work with' },
       {
         type: 'ul',
         items: [
-          'Multi-tenant: two credit unions launching simultaneously with brand and benefit variations. A third client could come online at any point.',
-          "Existing design system: Access Softek's white-label platform has established components and patterns; the new feature had to fit, not fight the system.",
-          'Compliance: NCUA membership disclosure, Equal Housing Lender notice, and standard regulatory footer elements needed clear placement.',
-          'No direct end-user research access — typical for white-label platform design where the end user is mediated through the credit union and PM.',
-          'I cannot share actual mockups in this case study due to NDA. Illustrations would be simplified, redrawn versions of patterns I designed, not reproductions of the production UI.',
+          'Multi-tenant launch: two credit unions with different tier models, brand systems, and benefit structures, with a third client possible later.',
+          "Existing white-label design system: the feature had to extend Access Softek\’s established components and patterns, not introduce a disconnected experience.",
+          'Compliance requirements: NCUA disclosure, Equal Housing Lender notice, and standard regulatory footer elements needed clear placement.',
+          'Limited research access: end-user insight came through the credit unions and PM rather than direct member research.',
+          'NDA constraints: visuals in this case study are simplified, redrawn representations of the patterns I designed, not production mockups.',
         ],
       },
 
       // ===== 04 — Process =====
-      { type: 'h2', mono: '// 04 — process', text: 'Designing tiers as a system' },
+      { type: 'h2', mono: '// 04 process', text: 'Designing a configurable loyalty framework' },
       {
         type: 'p',
         text:
-          'I worked from the strategy PM owned and translated it into a designed system through several key decisions.',
+          'I worked from the PM’s program strategy and translated it into a design framework that could support different credit union brands, tier models, and benefit structures.',
       },
 
-      { type: 'h3', text: 'A tier is a system, not a screen' },
+      { type: 'h3', text: 'Tier status became a reusable pattern' },
       {
         type: 'p',
         text:
-          "The temptation with a tiered loyalty program is to design four screens — one per tier. I treated tier status as a system: color, icon, and state combined into a visual language that reads identically anywhere it appears in the product. Every tier got a distinct icon family (shields for entry tiers, a diamond for the top tier) paired with a semantic color from the platform's existing palette. The same pattern shows up on the Rewards page, on the Accounts hero block, and in inline status references throughout the app — so members encounter their status consistently, not only when they navigate to a dedicated screen.",
+          "Each tier used the same core structure: name, visual mark, status state, criteria, benefit list, and optional CTA. The framework stayed consistent, while tier count, names, icons, colors, and benefits could change per credit union.",
       },
 
-      { type: 'h3', text: 'Web and mobile solve different problems' },
+      { type: 'h3', text: 'The hierarchy starts with current status' },
       {
         type: 'p',
         text:
-          'On desktop, members compare tiers side by side — "what do I get if I move from Silver to Gold?" The 2×2 grid layout puts all four tiers in one glance, with the user\'s current tier visually marked. On mobile, members read tiers in sequence — they\'re not comparing, they\'re scrolling through depth. So the mobile layout stacks tiers vertically. This wasn\'t a "make it responsive" decision — the two views serve different mental models.',
+          'The experience leads with the member\’s current tier and progress, then lets them open benefit details when needed. This keeps the main page scannable while still supporting deeper exploration.',
       },
 
-      { type: 'h3', text: 'Status as anchor, benefits as disclosure' },
+      { type: 'h3', text: 'Web and mobile use different content layouts' },
       {
         type: 'p',
         text:
-          'Every screen leads with the user\'s current status — name and visual mark front and center ("You\'re a Blue Diamond Account Holder"). Benefit details sit one tap behind a "View benefits" secondary CTA. This progressive disclosure keeps the page scannable for the dominant case ("just remind me where I am") and provides depth for the smaller case ("show me everything I get and the path to the next tier").',
+          'On web, tiers can be compared side by side. On mobile, the same information becomes a stacked flow, which works better for narrow screens and longer benefit content.',
       },
 
-      { type: 'h3', text: 'Built-in upsell, but not pushy' },
+      { type: 'h3', text: 'Benefits can become actions' },
       {
         type: 'p',
         text:
-          'The platform\'s strategic intent was cross-sell. The design surfaces this in two ways: an "X of Y products" progress indicator on locked tiers (so members see exactly what unlocks the next tier) and a contextual "Open an account / Apply for a loan" CTA at the bottom of the page (visible, but positioned after the educational content). The page motivates action without making the user feel sold to.',
+          'Where a reward connected to an existing banking flow, the benefit included a direct action such as starting a skip payment or replacing a card.',
       },
 
-      { type: 'h3', text: 'Actions inside the rewards, not next to them' },
+      { type: 'h3', text: 'Multi-tenant variation was planned from the start' },
       {
         type: 'p',
         text:
-          "The strongest version of a benefit isn't a description; it's a working button. Where benefits had associated actions in the platform — start a skip payment, replace a card — I deep-linked directly to those flows from inside the benefit copy. The Rewards page becomes a working tool, not a marketing surface.",
-      },
-
-      { type: 'h3', text: 'The iteration: one tier or all of them on the detail page?' },
-      {
-        type: 'p',
-        text:
-          'The most-discussed decision during review was the "View benefits" destination. PM wasn\'t sure whether tapping into a tier should reveal just that tier\'s full benefits or all tiers at once for comparison. We prototyped both. The answer turned out to be platform-specific: on desktop, where comparison is the dominant use case and the grid was already visible on the previous page, we kept the focused single-tier view (depth on top of comparison the user already saw). On mobile, where the user landed on the detail page expecting full breakdown, we showed all tiers stacked — the same pattern they\'d been scrolling on the overview, now with full benefit detail. Different platform, different right answer.',
-      },
-
-      { type: 'h3', text: 'Multi-tenant from the start, not retrofitted' },
-      {
-        type: 'p',
-        text:
-          "The feature launched simultaneously at two credit unions: Texas Trust and Evolve. Both use the same component system, but their loyalty programs differ: tier names, tier counts (Evolve has more tiers than Texas Trust), brand colors, icon sets, and benefit lists. I designed every component to be themed and parameterized — the tier card accepts variable tier counts, theme colors, icon assets, and benefit entries. Onboarding a third credit union with its own configuration doesn't require redesigning anything; it's a configuration change.",
+          "The same framework supported two credit unions with different brands, tier counts, tier names, icons, and benefit lists, without redesigning the experience from scratch.",
       },
 
       // ===== 05 — Solution =====
-      { type: 'h2', mono: '// 05 — solution', text: 'Three connected surfaces, one system' },
-      { type: 'p', text: 'The shipped system spans three connected surfaces:' },
+      { type: 'h2', mono: '// 05 solution', text: 'Three connected surfaces' },
+      { type: 'p', text: 'The loyalty experience shipped across three connected surfaces:' },
       {
         type: 'ul',
         items: [
-          'Accounts hero - when a member opens the app, the top of the Accounts page shows their current tier status, tying loyalty visibility into the daily banking moment instead of hiding it in a sub-menu.',
-          "Rewards overview — a scannable comparison view of all tiers, with the member's current tier visually marked, locked tiers showing required product progress, and a clear path to the next tier.",
-          'Tier detail — full benefit information with deep-links to act on benefits the member already has (start a skip payment, replace a card). The rewards page becomes an actionable tool, not passive marketing.',
+          'Accounts hero: surfaces the member\’s current tier in the daily banking context, so loyalty status is visible without requiring the member to open a separate rewards page.',
+          "Rewards overview: shows all tiers in a scannable comparison view, with the current tier marked and locked tiers showing progress toward the next level.",
+          'Tier detail: provides the full benefit breakdown and links eligible benefits to existing banking flows, such as starting a skip payment or replacing a card.',
         ],
       },
       {
         type: 'p',
         text:
-          'Underneath these surfaces is a reusable component library — Tier Card, Benefit Item, Status Badge, CTA Link — that lets the same design ship to multiple credit unions with their own brand and benefit configurations. The library was the deliverable as much as the screens.',
+          'Underneath these surfaces, I designed reusable building blocks: Tier Card, Benefit Item, Status Badge, and CTA Link, so the same framework could support different credit union brands, tier models, and benefit configurations.',
       },
     ],
 
@@ -187,9 +173,9 @@ export const cases: Case[] = [
     ],
 
     reflection: [
-      "I'd push for at least one round of moderated usability testing with real members, even informally. The white-label structure made this logistically hard, but a tiered loyalty program is exactly the kind of feature where qualitative friction — do members understand the tier names? does the upsell feel earned or pushy? — can't be inferred from the screens alone.",
-      "I'd write a tighter variation spec earlier in the project. The variation points between credit unions (tier counts, names, colors, benefits) emerged iteratively as the second client came online. A documented variation matrix from day one would have saved a few rounds of \"wait, can the system handle this?\" conversations with PM and engineering.",
-      "I'd expose the path to the next tier more prominently. The current design shows product progress on locked tiers, but the connection between \"open this product\" and \"move up\" could be more direct. There's a product opportunity for personalized upsell — \"you're one product away from Gold\" as a contextual banner — that I'd push for in v2.",
+      "Run at least one moderated usability test with real members to validate tier comprehension, benefit clarity, and the tone of the upsell.",
+      "Define a variation matrix earlier, so tier counts, names, colors, icons, and benefits were documented before additional credit unions came online.",
+      "Make the path to the next tier more direct, with contextual prompts like “You’re one product away from Gold.",
     ],
   },
 ];
