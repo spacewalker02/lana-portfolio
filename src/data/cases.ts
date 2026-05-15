@@ -27,6 +27,10 @@ export const cases: Case[] = [
       src: '/cases/true-blue/hero-desktop.png',
       alt: 'True Blue Loyalty Rewards - desktop and mobile mockups showing tier-based rewards dashboard for Harbor Credit Union (fictional, NDA-safe brand)',
     },
+    heroImage: {
+      src: '/cases/true-blue/hero-desktop.png',
+      alt: 'True Blue Loyalty Rewards — desktop and mobile mockups showing tier levels and benefits, on a fictional Harbor Credit Union brand',
+    },
 
     tldr: {
       problem:
@@ -110,12 +114,24 @@ export const cases: Case[] = [
         text:
           'The experience leads with the member\’s current tier and progress, then lets them open benefit details when needed. This keeps the main page scannable while still supporting deeper exploration.',
       },
+      {
+        type: 'image',
+        src: '/cases/true-blue/tier-system.png',
+        alt: 'Four tier icons (Signature, Premier, Plus, Starter) shown next to three product contexts where the same icon-and-color combination is reused',
+        caption: 'The same tier identity reads across Status Greeting, Tier Grid, and Tier Detail.',
+      },
 
       { type: 'h3', text: 'Web and mobile use different content layouts' },
       {
         type: 'p',
         text:
           'On web, tiers can be compared side by side. On mobile, the same information becomes a stacked flow, which works better for narrow screens and longer benefit content.',
+      },
+      {
+        type: 'image',
+        src: '/cases/true-blue/web-vs-mobile.png',
+        alt: 'Side-by-side comparison of web layout (2×2 tier grid for at-a-glance comparison) and mobile layout (vertical stack for sequential scrolling)',
+        caption: 'Two layouts for two different questions — "what do I get if I move up?" vs. "where am I now?"',
       },
 
       { type: 'h3', text: 'Benefits can become actions' },

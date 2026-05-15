@@ -22,6 +22,16 @@ export default function CasePage() {
   return (
     <article>
       <CaseHero caseData={caseData} />
+      {caseData.heroImage && (
+      <Container size='narrow'>
+        <figure className={styles.heroFigure}>
+          <img
+            src={caseData.heroImage.src}
+            alt={caseData.heroImage.alt}
+          />
+        </figure>
+      </Container>
+    )}
       <CaseTLDR tldr={caseData.tldr} />
       <VideoEmbed url={caseData.loomUrl} />
       <CaseProse blocks={caseData.body} />

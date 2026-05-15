@@ -28,3 +28,15 @@
       }
     }
   }
+
+  .heroFigure {
+    margin: 24px 0 56px;
+  
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+  }

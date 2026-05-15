@@ -41,7 +41,8 @@ export type CaseBlock =
       title: string;
       body: string;
       links?: { label: string; url: string }[];
-    };
+    }
+    | { type: 'image'; src: string; alt: string; caption?: string };
 
 export interface CaseMeta {
   company: string;
@@ -60,6 +61,7 @@ export interface Case {
   meta: CaseMeta;
   tags: CaseTag[];
   cover: CaseCover;
+  heroImage?: { src: string; alt: string };
   tldr: CaseTLDR;
   loomUrl?: string;
   body: CaseBlock[];

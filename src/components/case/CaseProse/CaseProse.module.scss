@@ -68,3 +68,27 @@
       font-style: normal;
     }
   }
+
+  .figure {
+    margin: 40px 0;
+  
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+  
+    figcaption {
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-3);
+      text-align: center;
+      line-height: 1.45;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }

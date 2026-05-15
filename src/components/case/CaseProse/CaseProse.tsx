@@ -68,5 +68,13 @@ function BlockRenderer({ block }: { block: CaseBlock }) {
 
     case 'codeNote':
       return <CodeNote title={block.title} body={block.body} links={block.links} />;
+
+      case 'image':
+        return (
+          <figure className={styles.figure}>
+            <img src={block.src} alt={block.alt} loading="lazy" />
+            {block.caption && <figcaption>{block.caption}</figcaption>}
+          </figure>
+        );
   }
 }
