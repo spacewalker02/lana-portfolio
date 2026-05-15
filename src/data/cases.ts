@@ -23,9 +23,9 @@ export const cases: Case[] = [
     },
     tags: ['multi-tenant', 'design system', 'web + mobile'],
     cover: {
-      kind: 'nda',
-      metric: '×2',
-      caption: 'credit unions · simultaneous launch',
+      kind: 'screenshot',
+      src: '/cases/true-blue/hero-desktop.png',
+      alt: 'True Blue Loyalty Rewards - desktop and mobile mockups showing tier-based rewards dashboard for Harbor Credit Union (fictional, NDA-safe brand)',
     },
 
     tldr: {
