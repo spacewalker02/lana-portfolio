@@ -8,11 +8,11 @@ export const cases: Case[] = [
   // CASE 1 — True Blue Loyalty Rewards (Access Softek)
   // =========================================================================
   {
-    slug: 'true-blue-loyalty',
+    slug: 'multi-tenant-rewards',
     year: 2025,
-    title: 'True Blue Loyalty Rewards',
+    title: 'Multi-tenant loyalty system',
     oneLineImpact:
-      'Designed a tiered rewards system shipped simultaneously to two credit unions on a multi-tenant white-label platform — across web, iOS and Android.',
+      'Designed a tiered rewards system shipped simultaneously to two credit unions on a multi-tenant white-label platform - across web, iOS and Android.',
     meta: {
       company: 'Access Softek',
       industry: 'fintech',

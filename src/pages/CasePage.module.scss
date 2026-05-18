@@ -40,3 +40,25 @@
       border: 1px solid var(--border);
     }
   }
+
+  .heroButton {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+  
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      transition: opacity var(--t-base);
+    }
+  
+    &:hover img {
+      opacity: 0.92;
+    }
+  }

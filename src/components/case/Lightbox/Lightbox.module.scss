@@ -1,0 +1,48 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.92);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 5vw;
+    cursor: zoom-out;
+    animation: fade-in 200ms ease-out;
+  }
+  
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    cursor: default;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 150ms ease;
+  
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }

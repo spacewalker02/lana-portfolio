@@ -7,21 +7,28 @@ import styles from './CaseProse.module.scss';
 
 interface CaseProseProps {
   blocks: CaseBlock[];
+  onImageClick: (image: { src: string; alt: string }) => void;
 }
 
-export function CaseProse({ blocks }: CaseProseProps) {
+export function CaseProse({ blocks, onImageClick }: CaseProseProps) {
   return (
     <Container size="narrow">
       <div className={styles.prose}>
         {blocks.map((block, i) => (
-          <BlockRenderer key={i} block={block} />
+          <BlockRenderer key={i} block={block} onImageClick={onImageClick} />
         ))}
       </div>
     </Container>
   );
 }
 
-function BlockRenderer({ block }: { block: CaseBlock }) {
+function BlockRenderer({ 
+  block,
+  onImageClick,
+ }: { 
+  block: CaseBlock;
+  onImageClick: (image: { src: string; alt: string }) => void;
+ }) {
   switch (block.type) {
     case 'h2':
       return (
@@ -72,7 +79,14 @@ function BlockRenderer({ block }: { block: CaseBlock }) {
       case 'image':
         return (
           <figure className={styles.figure}>
-            <img src={block.src} alt={block.alt} loading="lazy" />
+            <button
+              type='button'
+              className={styles.imageButton}
+              onClick={() => onImageClick({ src: block.src, alt: block.alt })}
+              aria-label={`Open image: ${block.alt}`}
+            >
+              <img src={block.src} alt={block.alt} loading="lazy" />
+            </button>
             {block.caption && <figcaption>{block.caption}</figcaption>}
           </figure>
         );

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { cases, getCaseBySlug, getNextCase } from '@/data/cases';
 import { CaseHero } from '@/components/case/CaseHero/CaseHero';
@@ -7,6 +8,7 @@ import { CaseProse } from '@/components/case/CaseProse/CaseProse';
 import { Container } from '@/components/layout/Container/Container';
 import { ImpactList } from '@/components/case/ImpactList/ImpactList';
 import { NextCase } from '@/components/case/NextCase/NextCase';
+import { Lightbox } from '@/components/case/Lightbox/Lightbox';
 import NotFound from '@/pages/NotFound';
 import styles from './CasePage.module.scss';
 
@@ -14,6 +16,8 @@ export default function CasePage() {
   const { slug } = useParams<{ slug: string }>();
   const caseData = slug ? getCaseBySlug(slug) : undefined;
   const next = slug ? getNextCase(slug) : undefined;
+
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
 
   if (!caseData) return <NotFound />;
 
@@ -25,16 +29,23 @@ export default function CasePage() {
       {caseData.heroImage && (
       <Container size='narrow'>
         <figure className={styles.heroFigure}>
+          <button
+            type='button'
+            className={styles.heroButton}
+            onClick={() => setLightboxImage(caseData.heroImage!)}
+            aria-label={`Open image: ${caseData.heroImage.alt}`}
+          >
           <img
             src={caseData.heroImage.src}
             alt={caseData.heroImage.alt}
           />
+          </button>
         </figure>
       </Container>
     )}
       <CaseTLDR tldr={caseData.tldr} />
       <VideoEmbed url={caseData.loomUrl} />
-      <CaseProse blocks={caseData.body} />
+      <CaseProse blocks={caseData.body} onImageClick={setLightboxImage} />
 
       <Container size="narrow">
         <h2 className={styles.h2}>
@@ -57,6 +68,15 @@ export default function CasePage() {
       </Container>
 
       {next && <NextCase next={next} index={nextIndex} total={cases.length} />}
+
+      {lightboxImage && (
+        <Lightbox
+          src={lightboxImage.src}
+          alt={lightboxImage.alt}
+          onClose={() => setLightboxImage(null)}
+        />
+      )}
+
     </article>
   );
 }
