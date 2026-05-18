@@ -5,7 +5,7 @@ import type { Case } from '@/types/case';
 
 export const cases: Case[] = [
   // =========================================================================
-  // CASE 1 — True Blue Loyalty Rewards (Access Softek)
+  // CASE 1 — Loyalty Rewards (Access Softek)
   // =========================================================================
   {
     slug: 'multi-tenant-rewards',
@@ -25,11 +25,11 @@ export const cases: Case[] = [
     cover: {
       kind: 'screenshot',
       src: '/cases/true-blue/hero-desktop.png',
-      alt: 'True Blue Loyalty Rewards - desktop and mobile mockups showing tier-based rewards dashboard for Harbor Credit Union (fictional, NDA-safe brand)',
+      alt: 'Desktop and mobile mockups showing tier-based rewards dashboard for Harbor Credit Union (fictional, NDA-safe brand)',
     },
     heroImage: {
       src: '/cases/true-blue/hero-desktop.png',
-      alt: 'True Blue Loyalty Rewards — desktop and mobile mockups showing tier levels and benefits, on a fictional Harbor Credit Union brand',
+      alt: 'Desktop and mobile mockups showing tier levels and benefits, on a fictional Harbor Credit Union brand',
     },
 
     tldr: {
@@ -42,7 +42,7 @@ export const cases: Case[] = [
     },
 
     // I will with real Loom URL when recorded; placeholder shows pretty empty state
-    loomUrl: undefined,
+    loomUrl: 'https://www.loom.com/share/93ca6bb03de44ac9981ae18c41ed2821',
 
     body: [
       // ===== 01 — Context =====
@@ -50,17 +50,17 @@ export const cases: Case[] = [
       {
         type: 'p',
         text:
-          "Access Softek provides white-label digital banking platforms for credit unions. Each institution deploys the product under its own brand, with configurable features, visuals, and content.",
+          "Access Softek provides white-label digital banking platforms for credit unions. Each institution deploys the same core product under its own brand, with configurable features, visuals, and content.",
       },
       {
         type: 'p',
         text:
-          'True Blue Loyalty Rewards is a tiered membership program - Bronze, Silver, Gold, Blue Diamond - that rewards members for holding more products with their credit union. Benefits included loan skip payments, APY bumps on CDs, fee waivers, and raffle entries. The business goal was to increase retention and cross-sell by encouraging members to consolidate more financial products with their credit union.',
+          'This project was a tiered loyalty system that helped credit union members understand their current status, available rewards, and path to the next tier. The business goal was to increase retention and cross-sell by encouraging members to hold more products with their credit union.',
       },
       {
         type: 'p',
         text:
-          'I worked with a Product Manager who owned the program strategy and benefit definition. My role was to translate the program into a web, iOS, and Android experience that could support different credit union brands, tier configurations, and benefit structures without redesigning the flow from scratch.',
+          'I worked with a Product Manager who owned the program strategy and benefit definition. My role was to translate the loyalty model into a web, iOS, and Android experience that could support different brands, tier configurations, benefit structures, and visual systems without redesigning the flow from scratch.',
       },
 
       // ===== 02 — Problem =====
