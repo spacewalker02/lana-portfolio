@@ -17,7 +17,11 @@ export function About() {
         </div>
 
         <div className={styles.grid}>
-          <div className={styles.photo} aria-label={`Portrait of ${profile.name}`} />
+          <img
+            className={styles.photo}
+            src={profile.photo}
+            alt={`Portrait of ${profile.name}`}
+          />
           <div className={styles.bio}>
             {profile.bio.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>

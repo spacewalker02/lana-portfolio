@@ -2,6 +2,7 @@
 
 export const profile = {
     name: 'Svetlana Saikova',
+    photo: '/svetlana.png',
     handle: 'lana.design',
     role: 'Product Designer',
     positioning: 'Designing fintech interfaces & shipping them in code.',
