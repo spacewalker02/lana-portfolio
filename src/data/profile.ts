@@ -48,6 +48,6 @@ export const profile = {
       github: 'https://github.com/spacewalker02',
       behance: 'https://behance.net/svetlanasaykova',
       telegram: 'https://t.me/say_fit',
-      resume: '/resume.html',
+      resume: '/svetlana-saikova-resume.pdf',
     },
   } as const;
