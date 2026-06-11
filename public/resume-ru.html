@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Светлана Сайкова — Product Designer · Резюме</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ---- design tokens — same as the portfolio site ---- */
+  :root {
+    --bg: #ffffff;
+    --surface: #fafafa;
+    --surface-2: #f4f4f5;
+    --border: #e7e7e9;
+    --border-strong: #d4d4d8;
+    --text: #0a0a0a;
+    --text-2: #525258;
+    --text-3: #8a8a90;
+    --accent: #1a4d5c;
+    --accent-soft: #e8f0f1;
+    --success: #16a34a;
+
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text);
+    background: var(--surface-2);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; padding: 0; margin: 0; }
+
+  /* ---- A4 page ---- */
+  @page { size: A4; margin: 0; }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 16mm 18mm 14mm;
+    margin: 24px auto;
+    background: var(--bg);
+    box-shadow: 0 1px 2px rgba(10,10,10,0.04), 0 8px 32px rgba(10,10,10,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; }
+    .no-print { display: none !important; }
+  }
+
+  /* ---- shared bits ---- */
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    color: var(--text-3);
+    font-weight: 400;
+  }
+
+  /* ---- header ---- */
+  .head { margin-bottom: 18px; }
+  .head__name {
+    font-size: 26pt;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin: 4px 0 5px;
+  }
+  .head__role {
+    font-size: 11pt;
+    color: var(--text-2);
+  }
+  .head__role em { font-style: normal; color: var(--accent); font-weight: 500; }
+
+  .contacts {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    font-size: 10pt;
+  }
+  .contacts a {
+    border-bottom: 1px solid var(--border);
+  }
+  .contacts__label {
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    color: var(--text-3);
+    margin-right: 5px;
+  }
+
+  /* ---- section ---- */
+  .section {
+    border-top: 1px solid var(--border);
+    padding-top: 13px;
+    margin-top: 15px;
+  }
+  .section__label { margin-bottom: 10px; }
+
+  /* ---- profile ---- */
+  .profile {
+    font-size: 10.5pt;
+    line-height: 1.55;
+    max-width: 72ch;
+  }
+  .profile strong { font-weight: 600; }
+
+  /* ---- role ---- */
+  .role { margin-bottom: 13px; page-break-inside: avoid; }
+  .role:last-child { margin-bottom: 0; }
+  .role__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .role__title { font-size: 10.5pt; font-weight: 600; }
+  .role__title em { font-style: normal; color: var(--text-2); font-weight: 400; }
+  .role__dates {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    color: var(--text-3);
+    white-space: nowrap;
+  }
+  .role__company {
+    font-size: 9.5pt;
+    color: var(--text-2);
+    margin: 1px 0 6px;
+  }
+  .bullets li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 10pt;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    top: -1px;
+    color: var(--text-3);
+    font-weight: 700;
+    font-size: 13pt;
+  }
+  .bullets li:last-child { margin-bottom: 0; }
+  .bullets b { font-weight: 600; }
+  .bullets .impact { color: var(--accent); font-weight: 500; }
+
+  /* ---- selected project ---- */
+  .project {
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+  .project b { font-weight: 600; }
+  .project em { font-style: normal; color: var(--text-2); }
+
+  .section__selected {
+    margin-top: 150px;
+  }
+
+  /* ---- skills + education grid ---- */
+  .grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+  }
+
+  .skill-group { margin-bottom: 10px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group__label {
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    color: var(--text-3);
+    margin-bottom: 5px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    padding: 2px 7px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    white-space: nowrap;
+  }
+  .chip.lead {
+    color: var(--accent);
+    border-color: var(--accent-soft);
+    background: var(--accent-soft);
+  }
+
+  .edu-item { font-size: 9.5pt; line-height: 1.4; margin-bottom: 8px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-item b { font-weight: 600; }
+  .edu-item em { font-style: normal; color: var(--text-2); }
+  .edu-item .yr {
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    color: var(--text-3);
+    margin-left: 6px;
+  }
+
+  /* ---- footer ---- */
+  .foot {
+    margin-top: 15px;
+    padding-top: 9px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    color: var(--text-3);
+  }
+
+  /* ---- screen-only print helper ---- */
+  .helper {
+    max-width: 210mm;
+    margin: 24px auto 0;
+    padding: 13px 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-2);
+  }
+  .helper b { color: var(--text); font-weight: 500; }
+  .helper button {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--text);
+    background: var(--text);
+    color: var(--bg);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="helper no-print">
+  <span>// чтобы сохранить как PDF — открой в <b>Chrome</b>, нажми <b>Cmd+P</b>, выбери "Сохранить как PDF", A4, поля: None</span>
+  <button onclick="window.print()">Сохранить как PDF →</button>
+</div>
+
+<article class="page">
+
+  <!-- HEADER -->
+  <header class="head">
+    <span class="mono">// резюме · 2026</span>
+    <h1 class="head__name">Светлана Сайкова</h1>
+    <p class="head__role">Product Designer · <em>Fintech &amp; SaaS</em> · React</p>
+
+    <div class="contacts">
+      <span><span class="contacts__label">почта</span><a href="mailto:svetlanasaykova@gmail.com">svetlanasaykova@gmail.com</a></span>
+      <span><span class="contacts__label">портфолио</span><a href="https://lana-portfolio-peach.vercel.app">lana-portfolio-peach.vercel.app</a></span>
+      <span><span class="contacts__label">linkedin</span><a href="https://www.linkedin.com/in/svetlana-saikova-520b6611b/">in/svetlana-saikova</a></span>
+      <span><span class="contacts__label">github</span><a href="https://github.com/spacewalker02">github.com/spacewalker02</a></span>
+    </div>
+  </header>
+
+  <!-- PROFILE -->
+  <section class="section">
+    <span class="mono section__label">// о себе</span>
+    <p class="profile">
+      Продуктовый дизайнер с 3+ годами опыта работы в финтехе. Специализируюсь на проектировании цифровых продуктов полного цикла: от исследования пользователей и проектирования пользовательских сценариев до создания интерфейсов, прототипов и дизайн-систем.
+
+      Дополнительно изучаю и практикую фронтенд-разработку на React и TypeScript, что помогает эффективнее взаимодействовать с командами разработки, быстрее создавать прототипы и принимать дизайн-решения с учетом технических ограничений.
+      
+      Работаю с распределенными командами и имею опыт взаимодействия с коллегами из США, Европы и Азии.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <span class="mono section__label">// опыт</span>
+
+    <div class="role">
+      <div class="role__head">
+        <span class="role__title">Product Designer</span>
+        <span class="role__dates">2023 — 2026</span>
+      </div>
+      <div class="role__company">
+        Access Softek, Inc. · Американская финтех-компания, разрабатывающая white-label платформу цифрового банкинга для кредитных союзов США.
+      </div>
+      <ul class="bullets">
+        <li>Проектирование пользовательских сценариев и интерфейсов для web и mobile продуктов.</li>
+        <li>Проведение исследований, создание user flow, wireframes и интерактивных прототипов.</li>
+        <li>Разработка и улучшение сложных продуктовых функций.</li>
+        <li>Перевод бизнес-требований в понятные пользовательские решения.</li>
+        <li>Совместная работа с продакт-менеджерами, аналитиками и разработчиками.</li>
+        <li>Развитие и поддержка дизайн-системы компании.</li>
+        <li>Сопровождение реализации решений и контроль качества интерфейсов.</li>
+        <li>Проверка реализации через DevTools и выявление UI-несоответствий.</li>
+        <li>Участие в продуктовых обсуждениях и формировании UX-стратегии.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__head">
+        <span class="role__title">Product Designer <em>· контракт</em></span>
+        <span class="role__dates">2021 — 2022</span>
+      </div>
+      <div class="role__company">
+        Крупный travel-продукт · web, iOS, Android
+      </div>
+      <ul class="bullets">
+        <li>Развитие многофункциональной дизайн-системы для нескольких платформ.</li>
+        <li>Редизайн ключевых пользовательских сценариев: поиск, оформление заказа, личный кабинет.</li>
+        <li>Совместная работа с продакт-менеджерами и разработчиками.</li>
+        <li>Формирование и проверка дизайн-гипотез.</li>
+        <li>Работа над улучшением пользовательского опыта на web и mobile.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role__head">
+        <span class="role__title">Freelance Product Designer</span>
+        <span class="role__dates">2022 — настоящее время</span>
+      </div>
+      <div class="role__company">
+        Проекты для клиентов из Европы и США.
+      </div>
+      <ul class="bullets">
+        <li>Полный цикл продуктового дизайна: от исследования и проектирования до финального интерфейса.</li>
+        <li>Создание брендинга и визуальных систем.</li>
+        <li>Построение компонентных библиотек и дизайн-систем.</li>
+        <li>Подготовка макетов к разработке.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SELECTED PROJECT -->
+  <section class="section">
+    <span class="mono section__label">// избранный проект</span>
+    <p class="project">
+      <b>Personal portfolio site</b> <em>- cамостоятельно спроектировала и разработала сайт-портфолио на React, TypeScript и SCSS Modules.
+        Проект демонстрирует сочетание навыков продуктового дизайна и фронтенд-разработки.
+      </em>
+    </p>
+  </section>
+
+  <!-- SKILLS + EDUCATION -->
+  <div class="grid">
+    <div>
+      <span class="mono section__label">// навыки</span>
+      <div class="skill-group">
+        <div class="skill-group__label">дизайн</div>
+        <div class="chips">
+          <span class="chip lead">product design</span>
+          <span class="chip">design systems</span>
+          <span class="chip">user research</span>
+          <span class="chip">прототипирование</span>
+          <span class="chip">web + mobile</span>
+          <span class="chip">accessibility</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group__label">разработка</div>
+        <div class="chips">
+          <span class="chip lead">react + typescript</span>
+          <span class="chip">scss / css modules</span>
+          <span class="chip">html</span>
+          <span class="chip">git, github, vercel</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span class="mono section__label">// образование &amp; языки</span>
+      <div class="edu-item">
+        <b>Frontend Developer Program</b><span class="yr">2025–26</span><br />
+        <em>Яндекс Практикум</em>
+      </div>
+      <div class="edu-item">
+        <b>UX Design Professional Certificate</b><span class="yr">2022</span><br />
+        <em>Google Career Certificates</em>
+      </div>
+      <div class="edu-item">
+        <b>Interface Design (UX/UI)</b><span class="yr">2021</span><br />
+        <em>Geekbrains</em>
+      </div>
+      <div class="edu-item">
+        <b>Английский</b> — Upper-Intermediate, IELTS · <b>Русский</b> — родной
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>Cветлана Cайкова · product designer</span>
+    <span>lana-portfolio-peach.vercel.app</span>
+  </footer>
+
+</article>
+
+</body>
+</html>

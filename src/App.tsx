@@ -5,6 +5,7 @@ import { ScrollToTop } from '@/hooks/useScrollToTop';
 import Home from '@/pages/Home';
 import CasePage from '@/pages/CasePage';
 import NotFound from '@/pages/NotFound';
+import VisualStudiesPage from './pages/VisualPages';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/case/:slug" element={<CasePage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/visual-studies" element={<VisualStudiesPage />} />
         </Routes>
       </main>
       <Footer />

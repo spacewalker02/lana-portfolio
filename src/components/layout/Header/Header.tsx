@@ -20,6 +20,7 @@ export function Header() {
 
         <nav className={styles.nav}>
           <a href="#work">Work</a>
+          <a href="/#visual">Visual</a>
           <a href="#about">About</a>
           <a
             href="mailto:svetlanasaykova@gmail.com"
