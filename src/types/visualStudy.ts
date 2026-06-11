@@ -2,6 +2,7 @@ export type VisualStudyCategory =
   | 'mobile'
   | 'dashboard'
   | 'typography'
+  | 'landing page'
   | 'color'
   | 'landing'
   | 'component';
