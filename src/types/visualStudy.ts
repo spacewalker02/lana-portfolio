@@ -28,5 +28,5 @@ export interface VisualStudy {
     label: 'Dribbble' | 'Behance';
   };
   featured?: boolean;
-  createdAt: string; // ISO date
+  createdAt: string;
 }

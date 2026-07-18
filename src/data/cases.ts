@@ -41,7 +41,6 @@ export const cases: Case[] = [
         'Shipped to two credit unions in the same release. One configurable component framework supported both implementations, and the feature became a core engagement tool for both institutions.',
     },
 
-    // I will with real Loom URL when recorded; placeholder shows pretty empty state
     loomUrl: 'https://www.loom.com/share/93ca6bb03de44ac9981ae18c41ed2821',
 
     body: [
@@ -192,6 +191,97 @@ export const cases: Case[] = [
       "Run at least one moderated usability test with real members to validate tier comprehension, benefit clarity, and the tone of the upsell.",
       "Define a variation matrix earlier, so tier counts, names, colors, icons, and benefits were documented before additional credit unions came online.",
       "Make the path to the next tier more direct, with contextual prompts like “You’re one product away from Gold.",
+    ],
+  },
+  {
+    slug: 'otp-configuration',
+    year: 2024,
+    title: 'Admin OTP configuration',
+    oneLineImpact:
+      'Designed a dense security configuration page that feels structured, explainable, and safe to use - without hiding important advanced controls.',
+    meta: {
+      company: 'Access Softek',
+      industry: 'fintech',
+      type: 'admin web app',
+      role: 'product designer',
+      duration: '~6 weeks',
+      isNDA: false,
+    },
+    tags: ['information architecture', 'admin UX', 'security'],
+    cover: {
+      kind: 'screenshot',
+      src: 'https://placehold.co/1280x800/f4f4f5/8a8a90?text=OTP+configuration+%E2%80%94+cover',
+      alt: 'Admin OTP login configuration page. (Placeholder)',
+    },
+    heroImage: {
+      src: 'https://placehold.co/1600x1000/f4f4f5/0a0a0a?text=OTP+configuration+%E2%80%94+full+page',
+      alt: 'OTP login configuration page on the admin web app - structured by admin decision, with warning state on high-impact controls, inline help, and separated advanced targeting. (Placeholder)',
+    },
+    tldr: {
+      problem:
+        'A dense security configuration page where settings affected account access for every member. Many interdependent controls with different scopes; admins needed to understand both what a setting does and who it affects.',
+      solution:
+        'Structured by admin decision (not by input type), warning state on highest-impact controls, advanced targeting separated but visible, inline help where meaning is not obvious.',
+      impact:
+        'Same capability, different read. Pattern reused across two more admin configuration pages on the platform.',
+    },
+    loomUrl: undefined,
+    body: [
+      // ===== 01 — The product =====
+      { type: 'h2', mono: '// 01 the product', text: 'The product' },
+      { type: 'p', text: "Access Softek's admin platform lets financial institutions configure security settings for their digital banking experience. This page focused on OTP rules: when verification is required, who it applies to, and which delivery channels are available." },
+  
+      // ===== 02 — The problem =====
+      { type: 'h2', mono: '// 02 the problem', text: 'The problem' },
+      { type: 'ul', items: [
+        'Settings affected account access and security, so mistakes could create serious friction.',
+        'The page contained many interdependent controls with different scopes.',
+        'Admins needed to understand both what a setting does and who it affects.',
+      ] },
+  
+      // ===== 03 — Design challenge =====
+      { type: 'h2', mono: '// 03 design challenge', text: 'Design challenge' },
+      { type: 'p', text: 'The challenge was to make a dense security configuration page feel structured, explainable, and safe to use - without hiding important advanced controls.' },
+  
+      // ===== 04 — Design decisions =====
+      { type: 'h2', mono: '// 04 design decisions', text: 'Design decisions' },
+  
+      { type: 'h3', text: 'Group settings by decision, not by input type' },
+      { type: 'p', text: 'Not "radio / checkbox / dropdown", but by what the admin is configuring:' },
+      { type: 'ul', items: [
+        'request mode',
+        'general settings',
+        'user scope',
+        'delivery channels',
+        'account protection',
+        'advanced settings',
+      ] },
+  
+      { type: 'h3', text: 'Use warnings for high-impact choices' },
+      { type: 'p', text: 'A warning sits next to the OTP request mode - it affects access for every member of the institution, so the consequences of changing it warrant a beat of attention before the click.' },
+  
+      { type: 'h3', text: 'Keep advanced targeting visible but separated' },
+      { type: 'p', text: "Specific users, groups, excluded users, IP addresses - these matter for power admins, but shouldn't overload the base configuration. They live in their own section, separated from the everyday controls." },
+  
+      { type: 'h3', text: 'Add contextual help where meaning is not obvious' },
+      { type: 'p', text: 'Inline help explains what each setting does and who it affects - so admins understand the scope of a control without leaving the page for documentation.' },
+  
+      // ===== 05 — Final direction / what shipped =====
+      { type: 'h2', mono: '// 05 final direction', text: 'What shipped' },
+      { type: 'p', text: 'A single configuration page: grouped sections, contextual warning at the highest-stakes decision, inline help on every field, and advanced targeting available but visually separated.' },
+    ],
+  
+    impact: [
+      { metric: 'Structure', text: 'Settings grouped by admin decision, not control type.' },
+      { metric: 'Safety', text: 'High-impact OTP mode received a warning state.' },
+      { metric: 'Clarity', text: 'Help text explained scope and consequences.' },
+      { metric: 'Scalability', text: 'Advanced targeting supported users, groups, exclusions, and IPs.' },
+    ],
+  
+    reflection: [
+      "I'd run a quick user test with credit union admins early. Five 20-minute sessions would have caught misalignments faster than internal review.",
+      'I\'d add a "recently changed" state for settings - a temporary highlight on dirty fields would help admins audit their edits before saving.',
+      'I\'d add a "member flow preview" so admins could see what their members will experience on next login with the current configuration.',
     ],
   },
 ];

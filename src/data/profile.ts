@@ -12,13 +12,13 @@ export const profile = {
       label: 'available · may 2026',
     },
   
-    location: 'Asia · working flexibly across US, EU, and Asia time zones',
+    location: 'Dubai / Remote · working flexibly across US, EU, and Asia time zones',
     experience: '3+ yrs in fintech',
   
     heroSub: [
         "I'm Svetlana, a Product Designer with 3+ years in fintech.",
         "I work end-to-end: research, UX, UI, design systems, and write the React that ships them.",
-        "Based in Asia · collaborating across US, EU & Asia time zones.",
+        "Dubai / Remote · collaborating across US, EU & Asia time zones.",
       ],
   
     bio: [
