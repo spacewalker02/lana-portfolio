@@ -194,11 +194,11 @@ export const cases: Case[] = [
     ],
   },
   {
-    slug: 'otp-configuration',
-    year: 2024,
-    title: 'Admin OTP configuration',
+    slug: 'security-policy-builder',
+    year: 2026,
+    title: 'Security Policy Builder',
     oneLineImpact:
-      'Designed a dense security configuration page that feels structured, explainable, and safe to use - without hiding important advanced controls.',
+      'A page where credit union admins set authentication rules for their members: designed so that high-stakes changes are safer to make.',
     meta: {
       company: 'Access Softek',
       industry: 'fintech',
@@ -207,81 +207,77 @@ export const cases: Case[] = [
       duration: '~6 weeks',
       isNDA: false,
     },
-    tags: ['information architecture', 'admin UX', 'security'],
+    tags: ['product framing', 'admin UX', 'security'],
     cover: {
       kind: 'screenshot',
-      src: 'https://placehold.co/1280x800/f4f4f5/8a8a90?text=OTP+configuration+%E2%80%94+cover',
-      alt: 'Admin OTP login configuration page. (Placeholder)',
+      src: '/cases/security-policy-builder/cover.png',
+      alt: 'Security Policy Builder — admin page for authentication rules with a master toggle, verification trigger, delivery channels, and three collapsible sections for scope, exceptions, and lockout.',
     },
     heroImage: {
-      src: 'https://placehold.co/1600x1000/f4f4f5/0a0a0a?text=OTP+configuration+%E2%80%94+full+page',
-      alt: 'OTP login configuration page on the admin web app - structured by admin decision, with warning state on high-impact controls, inline help, and separated advanced targeting. (Placeholder)',
+      src: '/cases/security-policy-builder/hero-page.png',
+      alt: 'The full Security Policy Builder page. Master toggle at the top, verification trigger, code expiration, delivery channels, and three collapsible sections (scope, exceptions, lockout). A sidebar on the right explains what each change means for members.',
     },
     tldr: {
       problem:
-        'A dense security configuration page where settings affected account access for every member. Many interdependent controls with different scopes; admins needed to understand both what a setting does and who it affects.',
+        'Every setting on this page affects login and account access for every member of the credit union. Admins have to understand what each control does, who it applies to, and how it interacts with the rest.',
       solution:
-        'Structured by admin decision (not by input type), warning state on highest-impact controls, advanced targeting separated but visible, inline help where meaning is not obvious.',
+        'One page. Master toggle for the whole rule at the top. Then the main verification settings. Scope, exceptions, and lockout live in three collapsible sections. A sidebar explains what each setting change will do for members, and stays open while editing.',
       impact:
-        'Same capability, different read. Pattern reused across two more admin configuration pages on the platform.',
+        'Ships as the main page for authentication settings on the platform. New rule types can be added later without rebuilding the layout.',
     },
     loomUrl: undefined,
     body: [
-      // ===== 01 — The product =====
       { type: 'h2', mono: '// 01 the product', text: 'The product' },
-      { type: 'p', text: "Access Softek's admin platform lets financial institutions configure security settings for their digital banking experience. This page focused on OTP rules: when verification is required, who it applies to, and which delivery channels are available." },
-  
-      // ===== 02 — The problem =====
+      { type: 'p', text: "Access Softek makes white-label digital banking for US credit unions. Each institution has an admin panel where their internal team configures the product for their own members." },
+      { type: 'p', text: "The Security Policy Builder is the page for setting authentication rules — when a member has to verify, who it applies to, how the code is delivered, and what happens if they get locked out." },
+
       { type: 'h2', mono: '// 02 the problem', text: 'The problem' },
       { type: 'ul', items: [
-        'Settings affected account access and security, so mistakes could create serious friction.',
-        'The page contained many interdependent controls with different scopes.',
-        'Admins needed to understand both what a setting does and who it affects.',
+        'Every setting affects login for real members. Mistakes create support tickets.',
+        'The controls talk to each other. Scope, delivery, and lockout are separate concepts but one policy.',
+        'Admins need to know both what a setting does and who it applies to.',
+        'Sometimes a rule needs to be switched off for a few hours (during a migration, or a support incident) without losing the configuration underneath.',
       ] },
-  
-      // ===== 03 — Design challenge =====
+
       { type: 'h2', mono: '// 03 design challenge', text: 'Design challenge' },
-      { type: 'p', text: 'The challenge was to make a dense security configuration page feel structured, explainable, and safe to use - without hiding important advanced controls.' },
-  
-      // ===== 04 — Design decisions =====
+      { type: 'p', text: 'Fit all of this on one page. Make the frequent settings quick to reach, keep the rare ones out of the way, and stop admins from doing damage by accident.' },
+
       { type: 'h2', mono: '// 04 design decisions', text: 'Design decisions' },
-  
-      { type: 'h3', text: 'Group settings by decision, not by input type' },
-      { type: 'p', text: 'Not "radio / checkbox / dropdown", but by what the admin is configuring:' },
-      { type: 'ul', items: [
-        'request mode',
-        'general settings',
-        'user scope',
-        'delivery channels',
-        'account protection',
-        'advanced settings',
-      ] },
-  
-      { type: 'h3', text: 'Use warnings for high-impact choices' },
-      { type: 'p', text: 'A warning sits next to the OTP request mode - it affects access for every member of the institution, so the consequences of changing it warrant a beat of attention before the click.' },
-  
-      { type: 'h3', text: 'Keep advanced targeting visible but separated' },
-      { type: 'p', text: "Specific users, groups, excluded users, IP addresses - these matter for power admins, but shouldn't overload the base configuration. They live in their own section, separated from the everyday controls." },
-  
-      { type: 'h3', text: 'Add contextual help where meaning is not obvious' },
-      { type: 'p', text: 'Inline help explains what each setting does and who it affects - so admins understand the scope of a control without leaving the page for documentation.' },
-  
-      // ===== 05 — Final direction / what shipped =====
+
+      { type: 'h3', text: 'Written like a policy' },
+      { type: 'p', text: "Admins aren't filling out a form, - they're writing a rule that everyone in their institution will follow. The page is written that way: every label talks about who and when, and the whole rule can be turned on or off at the top." },
+
+      { type: 'h3', text: 'Grouped by decision' },
+      { type: 'p', text: "The page is divided by what an admin is deciding: verification trigger, code expiration, delivery, scope, exceptions, lockout. Each section is one decision. The whole page reads as a checklist an admin can go through top to bottom." },
+
+      { type: 'h3', text: 'On/off for the whole rule' },
+      { type: 'p', text: "The rule has an on/off toggle at the top. Turn it off and everything underneath stays configured, just not active. Admins need this during a support incident or a staged migration: when they have to suspend a rule for a few hours without losing the setup they've spent time on." },
+
+      { type: 'h3', text: '"Why this matters" stays open' },
+      { type: 'p', text: 'The sidebar explains what happens to members when each setting changes, and stays visible the whole time the admin is editing. A warning that only shows on page load stops being useful the moment you scroll, or come back after a break.' },
+
+      { type: 'h3', text: 'Rare sections collapse away' },
+      { type: 'p', text: "Scope, exceptions, and lockout are three collapsible sections: each one is optional. A small credit union may never open scope or exceptions. A larger one uses all three. Collapsing them independently means admins don't have to scroll past what doesn't apply to them." },
+
+      { type: 'h3', text: "Labels in the admin's language" },
+      { type: 'p', text: 'Labels are written the way admins talk about these settings. "Verification trigger" names the decision, not the underlying field. "Trusted network exceptions" reads easier than "excluded IP addresses".' },
+      
       { type: 'h2', mono: '// 05 final direction', text: 'What shipped' },
-      { type: 'p', text: 'A single configuration page: grouped sections, contextual warning at the highest-stakes decision, inline help on every field, and advanced targeting available but visually separated.' },
+      { type: 'p', text: 'One page. Master toggle at the top, then verification trigger, code expiration, and delivery channels. Scope, exceptions, and lockout collapse away when not needed. The sidebar stays open the whole time. The layout is set up to hold new authentication rule types later without a redesign.' },
     ],
-  
+
     impact: [
-      { metric: 'Structure', text: 'Settings grouped by admin decision, not control type.' },
-      { metric: 'Safety', text: 'High-impact OTP mode received a warning state.' },
-      { metric: 'Clarity', text: 'Help text explained scope and consequences.' },
-      { metric: 'Scalability', text: 'Advanced targeting supported users, groups, exclusions, and IPs.' },
+      { metric: 'Frame', text: 'The page is written as a policy an admin is defining. Master toggle turns the whole rule on or off.' },
+      { metric: 'Context', text: 'Sidebar with the consequences of each setting stays open while editing.' },
+      { metric: 'Structure', text: 'Scope, exceptions, and lockout collapse independently. Admins skip what does not apply.' },
+      { metric: 'Language', text: 'Labels named after what admins are deciding, not after system fields.' },
+      { metric: 'Scalability', text: 'Works for small credit unions using only the top section, and larger ones opening all three collapsible ones.' },
     ],
-  
+
     reflection: [
-      "I'd run a quick user test with credit union admins early. Five 20-minute sessions would have caught misalignments faster than internal review.",
-      'I\'d add a "recently changed" state for settings - a temporary highlight on dirty fields would help admins audit their edits before saving.',
-      'I\'d add a "member flow preview" so admins could see what their members will experience on next login with the current configuration.',
+      "Run five short usability sessions with real credit union admins early. Would probably catch label problems faster than internal review does.",
+      'Add a "recently changed" state — a temporary highlight on edited fields would help admins double-check what they changed before saving.',
+      'Add a "member flow preview" so admins can see what their members will experience on next login with the current policy.',
     ],
   },
 ];
