@@ -1,80 +1,79 @@
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: saturate(180%) blur(12px);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
-    border-bottom: 1px solid transparent;
-    transition: border-color var(--t-base);
-  }
-  
-  .scrolled {
-    border-bottom-color: var(--border);
+    position: relative;
+    z-index: 10;
+    background-color: var(--color-bg);
   }
   
   .inner {
-    width: 100%;
-    max-width: var(--max-w-page);
-    margin: 0 auto;
-    padding-inline: var(--pad-x);
     display: flex;
+    width: min(
+      calc(100% - var(--page-padding) * 2),
+      var(--page-width)
+    );
+    min-height: 72px;
+    margin-inline: auto;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
   }
   
   .logo {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    color: var(--text);
-  
-    &::before {
-      content: '/';
-      color: var(--text-3);
-      margin-right: 2px;
-    }
+    color: var(--color-text);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
   
-  .nav {
+  .navigation {
     display: flex;
-    gap: 28px;
     align-items: center;
+    gap: 32px;
   }
   
-  .nav a {
-    font-size: var(--text-sm);
-    color: var(--text-2);
-    transition: color var(--t-fast);
+  .link {
+    position: relative;
+    color: var(--color-muted);
+    font-size: 13px;
+    transition: color 160ms ease;
   }
   
-  .nav a:hover {
-    color: var(--text);
+  .link::after {
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+    content: '';
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 180ms ease;
   }
   
-  .cta {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    color: var(--text) !important;
-    padding: 6px 12px;
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-pill);
-    transition: background var(--t-fast), border-color var(--t-fast);
+  .link:hover {
+    color: var(--color-text);
   }
   
-  .cta:hover {
-    background: var(--text);
-    color: var(--bg) !important;
-    border-color: var(--text);
+  .link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
   
-  @media (max-width: 600px) {
-    .nav a:not(.cta) {
-      display: none;
+  @media (max-width: 640px) {
+    .inner {
+      min-height: auto;
+      padding-block: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+  
+    .navigation {
+      width: 100%;
+      justify-content: space-between;
+      gap: 12px;
+    }
+  
+    .link {
+      font-size: 12px;
     }
   }

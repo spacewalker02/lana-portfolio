@@ -1,49 +1,96 @@
 .hero {
-    padding-top: 88px;
-    padding-bottom: 120px;
+    padding: 48px 0 112px;
+    background-color: var(--color-bg);
   }
   
-  .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 36px;
-    gap: 16px;
-    flex-wrap: wrap;
+  .inner {
+    width: min(
+      calc(100% - var(--page-padding) * 2),
+      var(--page-width)
+    );
+    margin-inline: auto;
+  }
+  
+  .content {
+    position: relative;
+  }
+  
+  .role {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .role span {
+    display: block;
+    color: var(--color-muted);
   }
   
   .title {
-    font-size: var(--text-hero);
-    line-height: 1.05;
-    letter-spacing: -0.025em;
+    max-width: 780px;
+    margin: 44px 0 0;
+    color: var(--color-text);
+    font-size: clamp(46px, 5.6vw, 70px);
     font-weight: 600;
-    max-width: 18ch;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
   
-    em {
-      font-style: normal;
-      color: var(--accent);
+  .title > span {
+    display: block;
+  }
+  
+  .accent {
+    color: var(--color-accent);
+  }
+  
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.88em;
+    margin-left: 8px;
+    background-color: currentColor;
+    vertical-align: -0.05em;
+  }
+  
+  .annotation {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    color: var(--color-accent);
+    font-family: 'Bradley Hand', 'Comic Sans MS', cursive;
+    font-size: 19px;
+    line-height: 1.15;
+    transform: rotate(-4deg);
+  }
+  
+  .annotation svg {
+    width: 90px;
+    height: 60px;
+    margin: 2px 0 0 -66px;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.4;
+  }
+  
+  @media (max-width: 900px) {
+    .annotation {
+      display: none;
     }
   }
   
-  .sub {
-    margin-top: 28px;
-    max-width: 60ch;
-
-    p {
-        font-size: var(--text-lg);
-        color: var(--text-2);
-        line-height: 1.55;
-        margin-bottom: 8px;
+  @media (max-width: 720px) {
+    .hero {
+      padding: 40px 0 72px;
     }
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-  }
   
-  .actions {
-    margin-top: 40px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    .title {
+      margin-top: 32px;
+      font-size: clamp(40px, 11vw, 54px);
+      line-height: 1.02;
+    }
   }

@@ -1,14 +1,61 @@
-@use 'tokens';
-@use 'reset';
-
-// reduce motion — accessibility
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+:root {
+    --color-bg: #ffffff;
+    --color-surface: #f7f9fc;
+    --color-text: #0c1220;
+    --color-muted: #667085;
+    --color-line: #e2e7ef;
+    --color-accent: #2f6bff;
+  
+    --page-width: 1180px;
+    --page-padding: 32px;
   }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: #0c1220;
+  background: #ffffff;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+    min-height: 100vh;
+  }
+  
+  @media (max-width: 720px) {
+    :root {
+      --page-padding: 20px;
+    }
+  }
