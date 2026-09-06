@@ -1,5 +1,6 @@
 import { CaseOverview } from '../../components/case/CaseOverview/CaseOverview';
 import { ProductSection } from '../../components/case/ProductSection/ProductSection';
+import { CaseContext } from '@/components/case/CaseContext/CaseContext';
 import styles from './LoyaltyCasePage.module.scss';
 
 export function LoyaltyCasePage() {
@@ -48,6 +49,7 @@ export function LoyaltyCasePage() {
 
       <CaseOverview />
       <ProductSection />
+      <CaseContext />
     </article>
   );
 }
