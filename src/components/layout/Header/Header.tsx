@@ -3,15 +3,15 @@ import styles from './Header.module.scss';
 const navigation = [
   {
     label: 'Work',
-    href: '#work',
+    href: '/#work',
   },
   {
     label: 'Visual',
-    href: '#visual',
+    href: '/#visual',
   },
   {
     label: 'About',
-    href: '#about',
+    href: '/#about',
   },
 ];
 
@@ -19,7 +19,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a className={styles.logo} href="#top">
+        <a className={styles.logo} href="/">
           /lana.design
         </a>
 
@@ -43,7 +43,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
           >
-            Résumé
+            Resume
           </a>
 
           <a

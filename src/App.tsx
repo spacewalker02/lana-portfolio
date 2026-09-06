@@ -1,11 +1,8 @@
+import { Route, Routes } from 'react-router-dom';
 import { Header } from './components/layout/Header/Header';
-import { Hero } from './components/home/Hero/Hero';
-import { SelectedWork } from './components/home/SelectedWork/SelectedWork';
-import { ShortStudies } from './components/home/ShortStudies/ShortStudies';
-import { About } from './components/home/About/About';
-import { Skills } from './components/home/Skills/Skills';
-import { Contact } from './components/home/Contact/Contact';
 import { Footer } from './components/layout/Footer/Footer';
+import { HomePage } from './pages/HomePage/HomePage';
+import { LoyaltyCasePage } from './pages/LoyaltyCasePage/LoyaltyCasePage';
 
 function App() {
   return (
@@ -13,12 +10,14 @@ function App() {
       <Header />
 
       <main>
-        <Hero />
-        <SelectedWork />
-        <ShortStudies />
-        <About />
-        <Skills />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+
+          <Route
+            path="/case/multi-tenant-rewards"
+            element={<LoyaltyCasePage />}
+          />
+        </Routes>
       </main>
 
       <Footer />
