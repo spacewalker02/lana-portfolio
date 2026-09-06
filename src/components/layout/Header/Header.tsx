@@ -1,9 +1,18 @@
 import styles from './Header.module.scss';
 
 const navigation = [
-  { label: 'Work', href: '#work' },
-  { label: 'Visual', href: '#visual' },
-  { label: 'About', href: '#about' },
+  {
+    label: 'Work',
+    href: '#work',
+  },
+  {
+    label: 'Visual',
+    href: '#visual',
+  },
+  {
+    label: 'About',
+    href: '#about',
+  },
 ];
 
 export function Header() {
@@ -14,7 +23,10 @@ export function Header() {
           /lana.design
         </a>
 
-        <nav className={styles.navigation} aria-label="Main navigation">
+        <nav
+          className={styles.navigation}
+          aria-label="Main navigation"
+        >
           {navigation.map((item) => (
             <a
               className={styles.link}
@@ -24,6 +36,15 @@ export function Header() {
               {item.label}
             </a>
           ))}
+
+          <a
+            className={styles.link}
+            href="/svetlana-saikova-resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Résumé
+          </a>
 
           <a
             className={styles.link}
