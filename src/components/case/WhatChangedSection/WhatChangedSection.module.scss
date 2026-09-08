@@ -1,0 +1,57 @@
+.section {
+    padding: 64px 0 72px;
+    border-top: 1px solid var(--color-line);
+    background-color: var(--color-surface);
+  }
+  
+  .inner {
+    width: min(
+      calc(100% - var(--page-padding) * 2),
+      var(--page-width)
+    );
+    margin-inline: auto;
+  }
+  
+  .copy {
+    max-width: 800px;
+  }
+  
+  .copy h2 {
+    margin: 0 0 20px;
+    color: var(--color-text);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+  
+  .copy p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  
+  .copy p + p {
+    margin-top: 16px;
+  }
+  
+  @media (max-width: 720px) {
+    .section {
+      padding: 52px 0 58px;
+    }
+  
+    .copy h2 {
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+  
+    .copy p {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+  
+    .copy p + p {
+      margin-top: 14px;
+    }
+  }

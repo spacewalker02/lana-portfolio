@@ -16,13 +16,7 @@ export function ProductSection() {
           </p>
         </div>
 
-        <div className={styles.visualCard}>
-          <div className={styles.visualHeader}>
-            <h3>Main experience</h3>
-
-            <span aria-hidden="true">→</span>
-          </div>
-
+        <figure className={styles.figure}>
           <div className={styles.visual}>
             <img
               src="/cases/true-blue/hero-desktop.png"
@@ -43,7 +37,11 @@ export function ProductSection() {
               </svg>
             </div>
           </div>
-        </div>
+
+          <figcaption>
+            Main loyalty experience across web and mobile
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
