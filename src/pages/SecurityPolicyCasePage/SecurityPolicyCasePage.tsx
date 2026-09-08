@@ -2,6 +2,8 @@ import { SecurityOverviewSection } from '../../components/case/SecurityOverviewS
 import { SecurityContextSection } from '../../components/case/SecurityContextSection/SecurityContextSection';
 import { SecurityDecisionsSection } from '../../components/case/SecurityDecisionsSection/SecurityDecisionsSection';
 import { SecurityShippedSection } from '../../components/case/SecurityShippedSection/SecurityShippedSection';
+import { SecurityChangedSection } from '../../components/case/SecurityChangedSection/SecurityChangedSection';
+import { SecurityReflectionSection } from '../../components/case/SecurityReflectionSection/SecurityReflectionSection';
 import styles from './SecurityPolicyCasePage.module.scss';
 
 export function SecurityPolicyCasePage() {
@@ -20,9 +22,9 @@ export function SecurityPolicyCasePage() {
             <h1>Security Policy Builder</h1>
 
             <p className={styles.intro}>
-              A page where credit union admins set
-              authentication rules for their members — designed
-              so that high-stakes changes are safer to make.
+              A page where credit union admins set authentication rules for
+              their members — designed so that high-stakes changes are safer to
+              make.
             </p>
 
             <div className={styles.annotation} aria-hidden="true">
@@ -58,6 +60,8 @@ export function SecurityPolicyCasePage() {
       <SecurityContextSection />
       <SecurityDecisionsSection />
       <SecurityShippedSection />
+      <SecurityChangedSection />
+      <SecurityReflectionSection />
     </article>
   );
 }
