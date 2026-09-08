@@ -1,6 +1,7 @@
 import { SecurityOverviewSection } from '../../components/case/SecurityOverviewSection/SecurityOverviewSection';
 import { SecurityContextSection } from '../../components/case/SecurityContextSection/SecurityContextSection';
 import { SecurityDecisionsSection } from '../../components/case/SecurityDecisionsSection/SecurityDecisionsSection';
+import { SecurityShippedSection } from '../../components/case/SecurityShippedSection/SecurityShippedSection';
 import styles from './SecurityPolicyCasePage.module.scss';
 
 export function SecurityPolicyCasePage() {
@@ -56,6 +57,7 @@ export function SecurityPolicyCasePage() {
       <SecurityOverviewSection />
       <SecurityContextSection />
       <SecurityDecisionsSection />
+      <SecurityShippedSection />
     </article>
   );
 }
