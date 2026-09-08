@@ -4,6 +4,7 @@ import { SecurityDecisionsSection } from '../../components/case/SecurityDecision
 import { SecurityShippedSection } from '../../components/case/SecurityShippedSection/SecurityShippedSection';
 import { SecurityChangedSection } from '../../components/case/SecurityChangedSection/SecurityChangedSection';
 import { SecurityReflectionSection } from '../../components/case/SecurityReflectionSection/SecurityReflectionSection';
+import { NextCaseLink } from '../../components/case/NextCaseLink/NextCaseLink';
 import styles from './SecurityPolicyCasePage.module.scss';
 
 export function SecurityPolicyCasePage() {
@@ -62,6 +63,12 @@ export function SecurityPolicyCasePage() {
       <SecurityShippedSection />
       <SecurityChangedSection />
       <SecurityReflectionSection />
+
+      <NextCaseLink
+        href="/case/multi-tenant-rewards"
+        title="Multi-tenant loyalty system"
+        description="Designing a shared rewards system that adapts to different brands across web and mobile."
+      />
     </article>
   );
 }
