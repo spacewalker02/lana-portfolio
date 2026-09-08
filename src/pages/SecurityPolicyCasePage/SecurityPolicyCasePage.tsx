@@ -1,4 +1,5 @@
 import { SecurityOverviewSection } from '../../components/case/SecurityOverviewSection/SecurityOverviewSection';
+import { SecurityContextSection } from '../../components/case/SecurityContextSection/SecurityContextSection';
 import styles from './SecurityPolicyCasePage.module.scss';
 
 export function SecurityPolicyCasePage() {
@@ -52,6 +53,7 @@ export function SecurityPolicyCasePage() {
       </section>
 
       <SecurityOverviewSection />
+      <SecurityContextSection />
     </article>
   );
 }
