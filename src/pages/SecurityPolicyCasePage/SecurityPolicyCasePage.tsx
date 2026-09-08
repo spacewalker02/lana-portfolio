@@ -1,3 +1,4 @@
+import { SecurityOverviewSection } from '../../components/case/SecurityOverviewSection/SecurityOverviewSection';
 import styles from './SecurityPolicyCasePage.module.scss';
 
 export function SecurityPolicyCasePage() {
@@ -49,6 +50,8 @@ export function SecurityPolicyCasePage() {
           </figure>
         </div>
       </section>
+
+      <SecurityOverviewSection />
     </article>
   );
 }
