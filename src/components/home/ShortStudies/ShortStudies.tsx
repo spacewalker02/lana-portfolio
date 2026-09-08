@@ -5,13 +5,13 @@ const studies = [
     title: 'Focus Loop · focus session app',
     image: '/visual/focus-loop.png',
     alt: 'Focus Loop focus session application',
-    href: '/visual-studies#focus-loop',
+    href: 'https://dribbble.com/shots/27461641-Focus-Loop-Productivity-Deep-Work-Mobile-App',
   },
   {
     title: 'Editorial · Fintech Blog',
     image: '/visual/fintechbloglanding.png',
     alt: 'Editorial fintech blog landing page',
-    href: '/visual-studies#fintech-blog',
+    href: 'https://dribbble.com/shots/27461552-Fintech-Landing-Page',
   },
 ];
 
@@ -41,6 +41,9 @@ export function ShortStudies() {
             <a
               className={styles.card}
               href={study.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${study.title} on Dribbble`}
               key={study.title}
             >
               <div className={styles.cardHeader}>
