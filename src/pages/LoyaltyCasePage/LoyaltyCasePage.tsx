@@ -4,6 +4,8 @@ import { CaseContext } from '../../components/case/CaseContext/CaseContext';
 import { LoyaltyFrameworkSection } from '../../components/case/LoyaltyFrameworkSection/LoyaltyFrameworkSection';
 import { ConnectedSurfacesSection } from '../../components/case/ConnectedSurfacesSection/ConnectedSurfacesSection';
 import { WhatChangedSection } from '../../components/case/WhatChangedSection/WhatChangedSection';
+import { ReflectionSection } from '../../components/case/ReflectionSection/ReflectionSection';
+import { NextCaseLink } from '../../components/case/NextCaseLink/NextCaseLink';
 import styles from './LoyaltyCasePage.module.scss';
 
 export function LoyaltyCasePage() {
@@ -56,6 +58,13 @@ export function LoyaltyCasePage() {
       <LoyaltyFrameworkSection />
       <ConnectedSurfacesSection />
       <WhatChangedSection />
+      <ReflectionSection />
+
+      <NextCaseLink
+        title="Security Policy Builder"
+        description="From logic to UI — making complex policy creation simple and approachable."
+        href="/case/security-policy-builder"
+      />
     </article>
   );
 }

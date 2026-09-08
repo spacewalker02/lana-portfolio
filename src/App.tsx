@@ -3,6 +3,7 @@ import { Header } from './components/layout/Header/Header';
 import { Footer } from './components/layout/Footer/Footer';
 import { HomePage } from './pages/HomePage/HomePage';
 import { LoyaltyCasePage } from './pages/LoyaltyCasePage/LoyaltyCasePage';
+import { SecurityPolicyCasePage } from './pages/SecurityPolicyCasePage/SecurityPolicyCasePage';
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
           <Route
             path="/case/multi-tenant-rewards"
             element={<LoyaltyCasePage />}
+          />
+
+          <Route
+            path="/case/security-policy-builder"
+            element={<SecurityPolicyCasePage />}
           />
         </Routes>
       </main>
