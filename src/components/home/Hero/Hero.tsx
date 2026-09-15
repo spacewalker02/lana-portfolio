@@ -1,37 +1,40 @@
-import { profile } from '@/data/profile';
-import { Container } from '@/components/layout/Container/Container';
-import { MonoLabel, StatusPill, ButtonLink, ArrowRight, ArrowDown } from '@/components/ui';
 import styles from './Hero.module.scss';
 
 export function Hero() {
   return (
-    <section className={styles.hero}>
-      <Container>
-        <div className={styles.top}>
-          <MonoLabel>// product designer · fintech & saas</MonoLabel>
-          <StatusPill label={profile.status.label} available={profile.status.available} />
-        </div>
+    <section className={styles.hero} id="top">
+      <div className={styles.inner}>
+        <div className={styles.content}>
+          <p className={styles.role}>
+            Product Designer
+            <span>Remote · Worldwide</span>
+          </p>
 
-        <h1 className={styles.title}>
-          Designing fintech interfaces  &{' '}
-          <em>shipping them in code</em>.
-        </h1>
+          <h1 className={styles.title}>
+            <span>Designing fintech interfaces &</span>
 
-        <div className={styles.sub}>
-            {profile.heroSub.map((line, i) => (
-                <p key={i}>{line}</p>
-            ))}
-        </div>
+            <span className={styles.accent}>
+              shipping them in code.
+              <span className={styles.cursor} aria-hidden="true" />
+            </span>
+          </h1>
 
-        <div className={styles.actions}>
-          <ButtonLink href="#work">
-            See selected work <ArrowRight />
-          </ButtonLink>
-          <ButtonLink href={profile.links.resume} variant="ghost" target="_blank" rel="noreferrer">
-            View resume <ArrowDown />
-          </ButtonLink>
+          <div className={styles.annotation} aria-hidden="true">
+            <span>
+              Ideas
+              <br />
+              to products
+              <br />
+              {'</>'}
+            </span>
+
+            <svg viewBox="0 0 90 60">
+              <path d="M80 6C51 8 27 20 14 47" />
+              <path d="M14 47L15 35M14 47L25 42" />
+            </svg>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

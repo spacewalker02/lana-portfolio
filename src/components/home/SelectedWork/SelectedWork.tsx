@@ -1,36 +1,85 @@
-import { Container } from '@/components/layout/Container/Container';
-import { CaseCard } from '@/components/home/CaseCard/CaseCard';
-import { MonoLabel } from '@/components/ui';
-import { cases } from '@/data/cases';
 import styles from './SelectedWork.module.scss';
 
 export function SelectedWork() {
-  const [first, ...rest] = cases;
-  const hasMultiple = cases.length > 1;
-
   return (
     <section className={styles.section} id="work">
-      <Container>
-        <div className={styles.head}>
-          <div>
-            <MonoLabel block>// selected work</MonoLabel>
-            <h2 className={styles.title}>
-              Designing fintech systems that ship & scale across products,
-              brands, and platforms.
-            </h2>
-          </div>
-          <span className={styles.count}>
-            {String(cases.length).padStart(2, '0')} / 2024–2026
-          </span>
-        </div>
+      <div className={styles.inner}>
+        <header className={styles.heading}>
+          <h2>Selected Work</h2>
+        </header>
 
-        <div className={`${styles.grid} ${hasMultiple ? styles.gridDouble : styles.gridSingle}`}>
-          {first && <CaseCard caseData={first} variant="hero" />}
-          {rest.map((c) => (
-            <CaseCard key={c.slug} caseData={c} />
-          ))}
+        <div className={styles.grid}>
+          <a
+            className={`${styles.card} ${styles.featured}`}
+            href="/case/multi-tenant-rewards"
+          >
+            <div className={styles.cardHeader}>
+              <h3>Multi-tenant loyalty system</h3>
+
+              <span className={styles.arrow} aria-hidden="true">
+                →
+              </span>
+            </div>
+
+            <div className={styles.visual}>
+              <img
+                className={styles.image}
+                src="/cases/true-blue/hero-desktop.png"
+                alt="Multi-tenant loyalty system interface"
+              />
+
+              <div className={styles.note} aria-hidden="true">
+                <span>
+                  Same system.
+                  <br />
+                  Different brands
+                </span>
+
+                <svg viewBox="0 0 90 120">
+                  <path d="M72 4C76 33 72 61 58 82C47 98 34 108 18 113" />
+                  <path d="M18 113L20 99M18 113L32 109" />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <div className={styles.stack}>
+            <a
+              className={`${styles.card} ${styles.compact}`}
+              href="/case/security-policy-builder"
+            >
+              <div className={styles.cardHeader}>
+                <h3>Security Policy Builder</h3>
+
+                <span className={styles.arrow} aria-hidden="true">
+                  →
+                </span>
+              </div>
+
+              <div className={styles.visual}>
+                <img
+                  className={styles.image}
+                  src="/cases/security-policy-builder/cover.png"
+                  alt="Security Policy Builder interface"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+
+            <div className={styles.comingSoon}>
+              <span className={styles.plus} aria-hidden="true">
+                +
+              </span>
+
+              <p>
+                More projects
+                <br />
+                coming soon.
+              </p>
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

@@ -1,26 +1,38 @@
-import { Container } from '@/components/layout/Container/Container';
 import styles from './Footer.module.scss';
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className={styles.footer}>
-      <Container>
-        <div className={styles.inner}>
-          <div>© {year} Svetlana Saikova · Built with React + TypeScript</div>
-          <div className={styles.right}>
-            <span>v1.0.0</span>
-            <a
-              href="https://github.com/spacewalker02/lana-portfolio"
-              target="_blank"
-              rel="noreferrer"
-            >
-              source ↗
-            </a>
-          </div>
+      <div className={styles.inner}>
+        <div className={styles.identity}>
+          <a className={styles.logo} href="#top">
+            /lana.design
+          </a>
+
+          <span>
+            © {new Date().getFullYear()} Svetlana Saikova
+          </span>
         </div>
-      </Container>
+
+        <nav className={styles.navigation} aria-label="Footer navigation">
+          <a href="mailto:svetlanasaykova@gmail.com">
+            Email
+          </a>
+
+          <a
+            href="/svetlana-saikova-resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Résumé
+          </a>
+
+          <a href="#top">
+            Back to top
+            <span aria-hidden="true"> ↑</span>
+          </a>
+        </nav>
+      </div>
     </footer>
   );
 }
