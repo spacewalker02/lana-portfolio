@@ -1,5 +1,4 @@
 import { CaseOverview } from '../../components/case/CaseOverview/CaseOverview';
-import { ProductSection } from '../../components/case/ProductSection/ProductSection';
 import { CaseContext } from '../../components/case/CaseContext/CaseContext';
 import { LoyaltyFrameworkSection } from '../../components/case/LoyaltyFrameworkSection/LoyaltyFrameworkSection';
 import { ConnectedSurfacesSection } from '../../components/case/ConnectedSurfacesSection/ConnectedSurfacesSection';
@@ -53,7 +52,6 @@ export function LoyaltyCasePage() {
       </section>
 
       <CaseOverview />
-      <ProductSection />
       <CaseContext />
       <LoyaltyFrameworkSection />
       <ConnectedSurfacesSection />

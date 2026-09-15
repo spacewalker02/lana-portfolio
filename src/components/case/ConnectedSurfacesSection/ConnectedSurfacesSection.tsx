@@ -30,7 +30,7 @@ export function ConnectedSurfacesSection() {
 
           <div className={styles.visual}>
             <img
-              src="/cases/true-blue/web-vs-mobile.png"
+              src="/cases/true-blue/product.png"
               alt="Comparison of loyalty tier experiences on web and mobile"
               loading="lazy"
             />
