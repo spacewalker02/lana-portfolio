@@ -25,7 +25,6 @@ export function ConnectedSurfacesSection() {
           <div className={styles.visualHeader}>
             <h3>Web and mobile — different mental models</h3>
 
-            <span aria-hidden="true">→</span>
           </div>
 
           <div className={styles.visual}>
