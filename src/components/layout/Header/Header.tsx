@@ -39,7 +39,7 @@ export function Header() {
 
           <a
             className={styles.link}
-            href="/svetlana-saikova-resume.pdf"
+            href="/resume.html"
             target="_blank"
             rel="noreferrer"
           >

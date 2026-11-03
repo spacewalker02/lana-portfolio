@@ -23,8 +23,6 @@ export function LoyaltyFrameworkSection() {
         <div className={styles.visualCard}>
           <div className={styles.visualHeader}>
             <h3>Tier system and brand variations</h3>
-
-            <span aria-hidden="true">→</span>
           </div>
 
           <div className={styles.visual}>
