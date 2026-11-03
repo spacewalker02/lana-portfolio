@@ -20,7 +20,7 @@ export function Footer() {
           </a>
 
           <a
-            href="/svetlana-saikova-resume.pdf"
+            href="/resume.html"
             target="_blank"
             rel="noreferrer"
           >
