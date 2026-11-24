@@ -5,6 +5,7 @@ import { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
 import { HomePage } from './pages/HomePage/HomePage';
 import { LoyaltyCasePage } from './pages/LoyaltyCasePage/LoyaltyCasePage';
 import { SecurityPolicyCasePage } from './pages/SecurityPolicyCasePage/SecurityPolicyCasePage';
+import { ZhuijuCasePage } from './pages/ZhuijuCasePage/ZhuijuCasePage';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             path="/case/security-policy-builder"
             element={<SecurityPolicyCasePage />}
           />
+
+          <Route path="/case/zhuiju" element={<ZhuijuCasePage />} />
         </Routes>
       </main>
 
