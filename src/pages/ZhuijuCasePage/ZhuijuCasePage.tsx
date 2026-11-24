@@ -69,7 +69,7 @@ export function ZhuijuCasePage() {
             <div className={styles.meta}>
               <p>
                 2026 · Personal product
-                <span>Product Designer · Designed and built with AI</span>
+                <span>Product Designer</span>
               </p>
             </div>
 
@@ -77,7 +77,7 @@ export function ZhuijuCasePage() {
 
             <p className={styles.intro}>
               A mobile web app that teaches Chinese through original stories
-              written like Chinese dramas — with one season for every HSK
+              written like Chinese dramas. One season for every HSK
               level.
             </p>
 
