@@ -65,9 +65,9 @@ export function SecurityPolicyCasePage() {
       <SecurityReflectionSection />
 
       <NextCaseLink
-        href="/case/multi-tenant-rewards"
-        title="Multi-tenant loyalty system"
-        description="Designing a shared rewards system that adapts to different brands across web and mobile."
+        href="/case/zhuiju"
+        title="Zhuiju"
+        description="A Chinese learning app built on drama-style stories, with one season for every HSK level."
       />
     </article>
   );

@@ -66,17 +66,27 @@ export function SelectedWork() {
               </div>
             </a>
 
-            <div className={styles.comingSoon}>
-              <span className={styles.plus} aria-hidden="true">
-                +
-              </span>
+            <a
+              className={`${styles.card} ${styles.compact}`}
+              href="/case/zhuiju"
+            >
+              <div className={styles.cardHeader}>
+                <h3>Zhuiju · Chinese through drama-style stories</h3>
 
-              <p>
-                More projects
-                <br />
-                coming soon.
-              </p>
-            </div>
+                <span className={styles.arrow} aria-hidden="true">
+                  →
+                </span>
+              </div>
+
+              <div className={styles.visual}>
+                <img
+                  className={styles.image}
+                  src="/cases/zhuiju/card.jpg"
+                  alt="Zhuiju story covers designed as drama posters"
+                  loading="lazy"
+                />
+              </div>
+            </a>
           </div>
         </div>
       </div>
